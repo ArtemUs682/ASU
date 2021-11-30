@@ -1,0 +1,38 @@
+﻿<Window x:Class="ASU.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ASU"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox Name ="ABox" HorizontalAlignment="Left" Height="23" Margin="10,246,0,0" TextWrapping="Wrap" Text="Введите A" VerticalAlignment="Top" Width="307" GotFocus="ABox_GotFocus" LostFocus="ABox_LostFocus"/>
+        <TextBox Name ="BBox" HorizontalAlignment="Left" Height="23" Margin="10,274,0,0" TextWrapping="Wrap" Text="Введите B" VerticalAlignment="Top" Width="307" GotFocus="BBox_GotFocus" LostFocus="BBox_LostFocus"/>
+        <ComboBox Name="CBox" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="307" SelectionChanged="CBox_SelectionChanged"/>
+        <DataGrid x:Name="DGBox" HorizontalAlignment="Left" Height="314" Margin="343,10,0,0" VerticalAlignment="Top" Width="439" CanUserAddRows="True" CanUserDeleteRows="True" BeginningEdit="DGBox_BeginningEdit" AutoGenerateColumns="False" CellEditEnding="DGBox_CellEditEnding">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding func_xy}" Header="f(x, y)" Width="2*"/>
+                <DataGridTextColumn Binding="{Binding x}" Header="x" Width="*"/>
+                <DataGridTextColumn Binding="{Binding y}" Header="y" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <ListBox Name="LBox" HorizontalAlignment="Left" Height="231" Margin="10,10,0,0" VerticalAlignment="Top" Width="307" SelectionChanged="LBox_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120" SharedSizeGroup="Column1"/>
+                            <ColumnDefinition Width="150" SharedSizeGroup="Column2"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding TypeOfFunc}" Height="45" FontSize="16"/>
+                        <TextBlock Grid.Column="1" Text="{Binding MeanOfFunc}" Height="45" FontSize="14"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label Name="CLabel" Content="Выберите C" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top" Height="29" IsEnabled="False" IsHitTestVisible="False" Foreground="Black"/>
+
+
+    </Grid>
+</Window>

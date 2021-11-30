@@ -1,0 +1,30 @@
+C:\Users\Гандон Штопаный\Desktop\Учёба\ASU\bin\Debug\ASU.exe.config
+C:\Users\Гандон Штопаный\Desktop\Учёба\ASU\bin\Debug\ASU.exe
+C:\Users\Гандон Штопаный\Desktop\Учёба\ASU\bin\Debug\ASU.pdb
+C:\Users\Гандон Штопаный\Desktop\Учёба\ASU\obj\Debug\ASU.csprojAssemblyReference.cache
+C:\Users\Гандон Штопаный\Desktop\Учёба\ASU\obj\Debug\MainWindow.g.cs
+C:\Users\Гандон Штопаный\Desktop\Учёба\ASU\obj\Debug\App.g.cs
+C:\Users\Гандон Штопаный\Desktop\Учёба\ASU\obj\Debug\ASU_MarkupCompile.cache
+C:\Users\Гандон Штопаный\Desktop\Учёба\ASU\obj\Debug\ASU_MarkupCompile.lref
+C:\Users\Гандон Штопаный\Desktop\Учёба\ASU\obj\Debug\MainWindow.baml
+C:\Users\Гандон Штопаный\Desktop\Учёба\ASU\obj\Debug\ASU.g.resources
+C:\Users\Гандон Штопаный\Desktop\Учёба\ASU\obj\Debug\ASU.Properties.Resources.resources
+C:\Users\Гандон Штопаный\Desktop\Учёба\ASU\obj\Debug\ASU.csproj.GenerateResource.cache
+C:\Users\Гандон Штопаный\Desktop\Учёба\ASU\obj\Debug\ASU.exe
+C:\Users\Гандон Штопаный\Desktop\Учёба\ASU\obj\Debug\ASU.pdb
+C:\Users\drfre\Desktop\Учёба\ASU\bin\Debug\ASU.exe.config
+C:\Users\drfre\Desktop\Учёба\ASU\bin\Debug\ASU.exe
+C:\Users\drfre\Desktop\Учёба\ASU\bin\Debug\ASU.pdb
+C:\Users\drfre\Desktop\Учёба\ASU\obj\Debug\ASU.csproj.AssemblyReference.cache
+C:\Users\drfre\Desktop\Учёба\ASU\obj\Debug\ASU.csproj.SuggestedBindingRedirects.cache
+C:\Users\drfre\Desktop\Учёба\ASU\obj\Debug\MainWindow.g.cs
+C:\Users\drfre\Desktop\Учёба\ASU\obj\Debug\App.g.cs
+C:\Users\drfre\Desktop\Учёба\ASU\obj\Debug\ASU_MarkupCompile.cache
+C:\Users\drfre\Desktop\Учёба\ASU\obj\Debug\ASU_MarkupCompile.lref
+C:\Users\drfre\Desktop\Учёба\ASU\obj\Debug\MainWindow.baml
+C:\Users\drfre\Desktop\Учёба\ASU\obj\Debug\ASU.g.resources
+C:\Users\drfre\Desktop\Учёба\ASU\obj\Debug\ASU.Properties.Resources.resources
+C:\Users\drfre\Desktop\Учёба\ASU\obj\Debug\ASU.csproj.GenerateResource.cache
+C:\Users\drfre\Desktop\Учёба\ASU\obj\Debug\ASU.csproj.CoreCompileInputs.cache
+C:\Users\drfre\Desktop\Учёба\ASU\obj\Debug\ASU.exe
+C:\Users\drfre\Desktop\Учёба\ASU\obj\Debug\ASU.pdb
