@@ -46,6 +46,7 @@ namespace ASU
                 this.y = y;
             }
         }
+        public List<ItemDGBox> itemsDG = new List<ItemDGBox>();
         public MainWindow()
         {
             InitializeComponent();
@@ -56,7 +57,6 @@ namespace ASU
             itemsListBox.Add(new ItemListBox("4-ой степени", "f(x, y) = ax⁴ + by³ + c"));
             itemsListBox.Add(new ItemListBox("5-ой степени", "f(x, y) = ax⁵ + by⁴ + c"));
             LBox.ItemsSource = itemsListBox.ToList();
-            List<ItemDGBox> itemsDG = new List<ItemDGBox>();
             itemsDG.Add(new ItemDGBox("", "", ""));
             DGBox.ItemsSource = itemsDG.ToList();
         }
@@ -178,12 +178,56 @@ namespace ASU
             var rowcontent1 = DGBox.Columns[2].GetCellContent(DGBox.SelectedItem);
             if (rowcontent.Parent.ToString().Length != 36 && rowcontent1.Parent.ToString().Length != 36)
             {
-                //MessageBox.Show(rowcontent.Parent.ToString().Remove(0, 38) + rowcontent1.Parent.ToString().Remove(0, 38));
-                DataRowView rowView = DGBox.SelectedItem as DataRowView;
-                rowView.BeginEdit();
-                rowView[0] = rowcontent.Parent.ToString().Remove(0, 38) + rowcontent1.Parent.ToString().Remove(0, 38);
-                rowView.EndEdit();
-                DGBox.Items.Refresh();
+                string CellX = rowcontent.Parent.ToString().Remove(0, 38);
+                string CellY = rowcontent1.Parent.ToString().Remove(0, 38);
+                int x, y;
+                int.TryParse(CellX, out x);
+                int.TryParse(CellY, out y);
+                if ((x == 0 && CellX != "0") || (y == 0 && CellY != "0"))
+                {
+                    MessageBox.Show("X или Y введены неверно!");
+                }
+                else
+                {
+                    itemsDG[DGBox.SelectedIndex].x = rowcontent.Parent.ToString().Remove(0, 38);
+                    itemsDG[DGBox.SelectedIndex].y = rowcontent1.Parent.ToString().Remove(0, 38);
+                    itemsDG[DGBox.SelectedIndex].func_xy = (Convert.ToInt32(itemsDG[DGBox.SelectedIndex].x) + Convert.ToInt32(itemsDG[DGBox.SelectedIndex].y)).ToString();
+                    if (DGBox.SelectedIndex == itemsDG.Count - 1)
+                    {
+                        itemsDG.Add(new ItemDGBox("", "", ""));
+                    }
+                    DGBox.ItemsSource = itemsDG.ToList();
+                }
+            }
+        }
+
+        private void ABox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (ABox.Text != "Введите A" && ABox.Text != "")
+            {
+                string str = ABox.Text;
+                int a;
+                int.TryParse(ABox.Text, out a);
+                if (a == 0 && ABox.Text != "0")
+                {
+                    ABox.Text = str.Substring(0, str.Length - 1);
+                    ABox.CaretIndex = ABox.Text.Length;
+                }
+            }
+        }
+
+        private void BBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (BBox.Text != "Введите B" && BBox.Text != "")
+            {
+                string str = BBox.Text;
+                int a;
+                int.TryParse(BBox.Text, out a);
+                if (a == 0 && BBox.Text != "0")
+                {
+                    BBox.Text = str.Substring(0, str.Length - 1);
+                    BBox.CaretIndex = BBox.Text.Length;
+                }
             }
         }
     }
