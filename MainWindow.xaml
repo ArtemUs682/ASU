@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ASU"
         mc:Ignorable="d"
-        Title="MainWindow" Height="356" Width="800">
+        Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TextBox Name ="ABox" HorizontalAlignment="Left" Height="23" Margin="10,246,0,0" TextWrapping="Wrap" Text="Введите A" VerticalAlignment="Top" Width="307" GotFocus="ABox_GotFocus" LostFocus="ABox_LostFocus" TextChanged="ABox_TextChanged"/>
         <TextBox Name ="BBox" HorizontalAlignment="Left" Height="23" Margin="10,274,0,0" TextWrapping="Wrap" Text="Введите B" VerticalAlignment="Top" Width="307" GotFocus="BBox_GotFocus" LostFocus="BBox_LostFocus" TextChanged="BBox_TextChanged"/>
