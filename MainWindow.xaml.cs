@@ -178,25 +178,41 @@ namespace ASU
             var rowcontent1 = DGBox.Columns[2].GetCellContent(DGBox.SelectedItem);
             if (rowcontent.Parent.ToString().Length != 36 && rowcontent1.Parent.ToString().Length != 36)
             {
-                string CellX = rowcontent.Parent.ToString().Remove(0, 38);
-                string CellY = rowcontent1.Parent.ToString().Remove(0, 38);
-                int x, y;
-                int.TryParse(CellX, out x);
-                int.TryParse(CellY, out y);
-                if ((x == 0 && CellX != "0") || (y == 0 && CellY != "0"))
+                if (LBox.SelectedItem == null || LBox.SelectedIndex < 0)
                 {
-                    MessageBox.Show("X или Y введены неверно!");
+                    MessageBox.Show("Не выбрана функция!");
+                    DGBox.ItemsSource = itemsDG.ToList();
                 }
                 else
                 {
-                    itemsDG[DGBox.SelectedIndex].x = rowcontent.Parent.ToString().Remove(0, 38);
-                    itemsDG[DGBox.SelectedIndex].y = rowcontent1.Parent.ToString().Remove(0, 38);
-                    itemsDG[DGBox.SelectedIndex].func_xy = (Convert.ToInt32(itemsDG[DGBox.SelectedIndex].x) + Convert.ToInt32(itemsDG[DGBox.SelectedIndex].y)).ToString();
-                    if (DGBox.SelectedIndex == itemsDG.Count - 1)
+                    if (ABox.Text == "" || BBox.Text == "" || CBox.SelectedItem == null || CBox.SelectedIndex < 0)
                     {
-                        itemsDG.Add(new ItemDGBox("", "", ""));
+                        MessageBox.Show("Введены не все коэффиценты!");
+                        DGBox.ItemsSource = itemsDG.ToList();
                     }
-                    DGBox.ItemsSource = itemsDG.ToList();
+                    else
+                    {
+                        string CellX = rowcontent.Parent.ToString().Remove(0, 38);
+                        string CellY = rowcontent1.Parent.ToString().Remove(0, 38);
+                        int x, y;
+                        int.TryParse(CellX, out x);
+                        int.TryParse(CellY, out y);
+                        if ((x == 0 && CellX != "0") || (y == 0 && CellY != "0"))
+                        {
+                            MessageBox.Show("X или Y введены неверно!");
+                        }
+                        else
+                        {
+                            itemsDG[DGBox.SelectedIndex].x = rowcontent.Parent.ToString().Remove(0, 38);
+                            itemsDG[DGBox.SelectedIndex].y = rowcontent1.Parent.ToString().Remove(0, 38);
+                            itemsDG[DGBox.SelectedIndex].func_xy = (Convert.ToInt32(ABox.Text) * Math.Pow(x, LBox.SelectedIndex + 1) + Convert.ToInt32(BBox.Text) * Math.Pow(y, LBox.SelectedIndex) + Convert.ToInt32(CBox.Text)).ToString();
+                            if (DGBox.SelectedIndex == itemsDG.Count - 1)
+                            {
+                                itemsDG.Add(new ItemDGBox("", "", ""));
+                            }
+                            DGBox.ItemsSource = itemsDG.ToList();
+                        }
+                    }
                 }
             }
         }
